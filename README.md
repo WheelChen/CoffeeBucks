@@ -15,4 +15,10 @@
 ![实体关系图](https://tva1.sinaimg.cn/large/00831rSTly1gczaw3fr5fj30me0bu75t.jpg)
 
 
-## 项目更新
+## 技术组件
+- 引入Redis缓存咖啡信息
+
+- 使用Docker运行Redis
+```docker
+docker run -itd -p 6300:6379 redis:5.0.8
+```

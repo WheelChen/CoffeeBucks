@@ -20,4 +20,13 @@
 【新增】
 > 引入CoffeeCache对象，将其放入Redis中。
 
-`me.wheelchen.coffebucks.model.CoffeeCache`
+`model.CoffeeCache`
+`coffebucks.repository.CoffeeCacheRepository`
+
+> 自定义converter处理money类型
+
+`BytesToMoneyConverter`
+`MoneyToBytesConverter`
+
+OutPut:
+<img src="https://tva1.sinaimg.cn/large/00831rSTly1gczjfv5f5ej30di052t9a.jpg" style="zoom:50%;" />

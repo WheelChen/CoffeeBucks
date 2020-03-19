@@ -22,8 +22,11 @@ import java.util.Arrays;
 @Service
 @Transactional
 public class CoffeeOrderService {
-    @Autowired
-    private CoffeeOrderRepository coffeeOrderRepository;
+    private final CoffeeOrderRepository coffeeOrderRepository;
+
+    public CoffeeOrderService(CoffeeOrderRepository coffeeOrderRepository) {
+        this.coffeeOrderRepository = coffeeOrderRepository;
+    }
 
     public CoffeeOrder createOrder(String customer, Coffee... coffee) {
         CoffeeOrder order = CoffeeOrder.builder()

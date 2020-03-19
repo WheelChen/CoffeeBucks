@@ -1,23 +1,32 @@
 package me.wheelchen.coffebucks;
 
+import lombok.extern.slf4j.Slf4j;
 import me.wheelchen.coffebucks.model.Coffee;
-import me.wheelchen.coffebucks.model.CoffeeOrder;
-import me.wheelchen.coffebucks.service.CoffeeOrderService;
 import me.wheelchen.coffebucks.service.CoffeeService;
-import org.joda.money.CurrencyUnit;
-import org.joda.money.Money;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.util.Optional;
 
 /**
  * @author Kelvin Chen
  * @date 2020-03-18 23:18:20
  */
+@Slf4j
+@EnableTransactionManagement
 @SpringBootApplication
+@EnableJpaRepositories
+@EnableRedisRepositories
 public class SpringBucksApplication implements ApplicationRunner {
+
+    @Autowired
+    private CoffeeService coffeeService;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBucksApplication.class, args);
@@ -25,6 +34,13 @@ public class SpringBucksApplication implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        System.out.println(coffeeService.findAllCoffee());
+        Optional<Coffee> c = coffeeService.findSimpleCoffeeFromCache("mocha");
+        log.info("Coffee {}", c);
+
+        for (int i = 0; i < 5; i++) {
+            c = coffeeService.findSimpleCoffeeFromCache("mocha");
+        }
+
+        log.info("Value from Redis: {}", c);
     }
 }
