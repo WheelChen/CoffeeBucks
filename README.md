@@ -1,4 +1,6 @@
 # CoffeeBucks
+[![Build Status](https://travis-ci.com/WheelChen/CoffeeBucks.svg?branch=master)](https://travis-ci.com/WheelChen/CoffeeBucks)
+
 > 线上咖啡厅项目
 
 ## 项目设计
