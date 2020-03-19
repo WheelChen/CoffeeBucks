@@ -21,6 +21,6 @@ public class CoffeeServiceTest {
 
     @Test
     public void findAllCoffee() {
-        System.out.println(coffeeService.findAllCoffee());
+        assertNotNull(coffeeService.findAllCoffee());
     }
 }

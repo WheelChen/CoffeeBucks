@@ -2,8 +2,6 @@ package me.wheelchen.coffebucks.service;
 
 import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.model.CoffeeOrder;
-import org.joda.money.CurrencyUnit;
-import org.joda.money.Money;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +34,10 @@ public class CoffeeOrderServiceTest {
 //            CoffeeOrder coffeeOrder = coffeeOrderService.createOrder("test", coffee.get());
 //        }
 
-        coffee.ifPresent((c -> {
+        coffee.ifPresent(c -> {
             CoffeeOrder coffeeOrder = coffeeOrderService.createOrder("test", c);
-            System.out.println(coffeeOrder);
-        }));
+            assertNotNull(coffeeOrder);
+        });
 
     }
 }

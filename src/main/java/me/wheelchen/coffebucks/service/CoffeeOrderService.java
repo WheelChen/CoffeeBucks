@@ -5,7 +5,6 @@ import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.model.CoffeeOrder;
 import me.wheelchen.coffebucks.model.OrderState;
 import me.wheelchen.coffebucks.repository.CoffeeOrderRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
