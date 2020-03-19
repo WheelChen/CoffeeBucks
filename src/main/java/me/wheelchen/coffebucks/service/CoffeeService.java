@@ -3,7 +3,6 @@ package me.wheelchen.coffebucks.service;
 import lombok.extern.slf4j.Slf4j;
 import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.repository.CoffeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +29,7 @@ public class CoffeeService {
     }
 
     public Optional<Coffee> findOneByName(String name) {
-        return coffeeRepository.findByName(name);
+        return coffeeRepository.findOneByName(name);
     }
 
 

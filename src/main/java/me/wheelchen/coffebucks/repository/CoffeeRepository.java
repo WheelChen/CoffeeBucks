@@ -11,5 +11,11 @@ import java.util.Optional;
  * @date 2020-03-19 10:59:14
  */
 public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
-    Optional<Coffee> findByName(String name);
+    /**
+     * 按咖啡名查找
+     *
+     * @param name
+     * @return
+     */
+    Optional<Coffee> findOneByName(String name);
 }
