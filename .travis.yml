@@ -1,4 +1,5 @@
 language: java
 jdk:
-  - oraclejdk8
   - openjdk8
+before_script：
+  - sudo redis-server /etc/redis/redis.conf --port 6300
