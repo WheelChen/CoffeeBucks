@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Optional;
+
 import static org.junit.Assert.*;
 
 
@@ -28,10 +30,16 @@ public class CoffeeOrderServiceTest {
 
     @Test
     public void createOrder() {
-        Coffee coffee = coffeeService.findOneByName("latte");
+        Optional<Coffee> coffee = coffeeService.findOneByName("latte");
 
-        CoffeeOrder coffeeOrder = coffeeOrderService.createOrder("test", coffee);
+//        if (coffee.isPresent()) {
+//            CoffeeOrder coffeeOrder = coffeeOrderService.createOrder("test", coffee.get());
+//        }
 
-        System.out.println(coffeeOrder);
+        coffee.ifPresent((c -> {
+            CoffeeOrder coffeeOrder = coffeeOrderService.createOrder("test", c);
+            System.out.println(coffeeOrder);
+        }));
+
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 咖啡表操作
@@ -28,7 +29,7 @@ public class CoffeeService {
         return coffeeRepository.findAll();
     }
 
-    public Coffee findOneByName(String name) {
+    public Optional<Coffee> findOneByName(String name) {
         return coffeeRepository.findByName(name);
     }
 
