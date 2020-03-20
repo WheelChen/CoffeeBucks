@@ -28,6 +28,10 @@ public class SpringBucksApplication implements ApplicationRunner {
     @Autowired
     private CoffeeService coffeeService;
 
+    /**
+     * Spring启动方法
+     * @param args 接收参数
+     */
     public static void main(String[] args) {
         SpringApplication.run(SpringBucksApplication.class, args);
     }

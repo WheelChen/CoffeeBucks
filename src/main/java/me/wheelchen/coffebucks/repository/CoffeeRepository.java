@@ -14,8 +14,8 @@ public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
     /**
      * 按咖啡名查找
      *
-     * @param name
-     * @return
+     * @param name 咖啡名
+     * @return 咖啡
      */
     Optional<Coffee> findOneByName(String name);
 }

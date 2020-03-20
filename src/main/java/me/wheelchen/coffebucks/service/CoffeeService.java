@@ -29,20 +29,43 @@ public class CoffeeService {
 
     private final CoffeeRepository coffeeRepository;
 
+    /**
+     * 构造器方式注入Bean
+     *
+     * @param coffeeRepository 咖啡表相关操作
+     * @param coffeeCacheRepository 咖啡缓存操作
+     */
     public CoffeeService(CoffeeRepository coffeeRepository, CoffeeCacheRepository coffeeCacheRepository) {
         this.coffeeRepository = coffeeRepository;
         this.coffeeCacheRepository = coffeeCacheRepository;
     }
 
-
+    /**
+     * 获取所有咖啡信息
+     *
+     * @return
+     */
     public List<Coffee> findAllCoffee() {
         return coffeeRepository.findAll();
     }
 
+    /**
+     * 根据咖啡名称查找咖啡信息
+     *
+     * @param name 咖啡名称
+     * @return
+     */
     public Optional<Coffee> findOneByName(String name) {
         return coffeeRepository.findOneByName(name);
     }
 
+    /**
+     * 优先从缓存中获取咖啡信息
+     * 若无则访问数据库再存入缓存
+     *
+     * @param name 咖啡名称
+     * @return
+     */
     public Optional<Coffee> findSimpleCoffeeFromCache(String name) {
         Optional<CoffeeCache> cached = coffeeCacheRepository.findOneByName(name);
 
@@ -75,7 +98,8 @@ public class CoffeeService {
 
     /**
      * 使用ExampleMatcher匹配
-     * @param name
+     * 根据咖啡名称忽略大小写匹配
+     * @param name 咖啡名称
      * @return
      */
     public Optional<Coffee> findOneCoffee(String name) {

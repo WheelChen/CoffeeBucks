@@ -23,10 +23,20 @@ import java.util.Arrays;
 public class CoffeeOrderService {
     private final CoffeeOrderRepository coffeeOrderRepository;
 
+    /**
+     * 自动注入
+     * @param coffeeOrderRepository 咖啡订单相关Dao操作
+     */
     public CoffeeOrderService(CoffeeOrderRepository coffeeOrderRepository) {
         this.coffeeOrderRepository = coffeeOrderRepository;
     }
 
+    /**
+     * 创建订单
+     * @param customer 顾客名
+     * @param coffee 咖啡（可变参数）
+     * @return 订单对象
+     */
     public CoffeeOrder createOrder(String customer, Coffee... coffee) {
         CoffeeOrder order = CoffeeOrder.builder()
                 .customer(customer)
@@ -37,5 +47,4 @@ public class CoffeeOrderService {
         log.info("New Order: {}", saved);
         return saved;
     }
-
 }

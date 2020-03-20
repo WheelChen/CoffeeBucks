@@ -19,7 +19,7 @@ public class RedisCustomizeConfig {
 
     /**
      * 设置 从主服务器读数据
-     * @return
+     * @return 自定义LettuceClientConfigurationBuilder
      */
     @Bean
     public LettuceClientConfigurationBuilderCustomizer customizer() {

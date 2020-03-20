@@ -19,6 +19,9 @@ public class CoffeeServiceTest {
     @Autowired
     private CoffeeService coffeeService;
 
+    /**
+     * 测试查找所有咖啡
+     */
     @Test
     public void findAllCoffee() {
         assertNotNull(coffeeService.findAllCoffee());

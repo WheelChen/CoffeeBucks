@@ -26,6 +26,9 @@ public class CoffeeOrderServiceTest {
     @Autowired
     private CoffeeService coffeeService;
 
+    /**
+     * 测试创建订单
+     */
     @Test
     public void createOrder() {
         Optional<Coffee> coffee = coffeeService.findOneByName("latte");
