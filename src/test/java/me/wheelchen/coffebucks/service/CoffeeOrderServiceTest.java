@@ -47,6 +47,9 @@ public class CoffeeOrderServiceTest {
 
     }
 
+    /**
+     * 测试更新订单状态
+     */
     @Test
     public void updateState() {
         Optional<Coffee> latte = coffeeService.findOneCoffee("Latte");

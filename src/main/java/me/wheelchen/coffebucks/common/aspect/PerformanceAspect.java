@@ -1,4 +1,4 @@
-package me.wheelchen.coffebucks.common;
+package me.wheelchen.coffebucks.common.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -16,6 +16,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class PerformanceAspect {
 
+    /**
+     * 设置切入点
+     * 设置操作行为
+     *
+     * @param pjp 连接点
+     * @return
+     * @throws Throwable 异常父类
+     */
     @Around("repositoryOps()")
     public Object logPerformance(ProceedingJoinPoint pjp) throws Throwable {
         long startTime = System.currentTimeMillis();
