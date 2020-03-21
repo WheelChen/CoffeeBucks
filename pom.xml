@@ -16,13 +16,16 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <joda.version>1.0.1</joda.version>
+        <jadira.usertype.version>6.0.1.GA</jadira.usertype.version>
+        <p6spy.version>3.8.1</p6spy.version>
+        <maven.checkstyle.version>3.0.0</maven.checkstyle.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>2.1.2.RELEASE</version>
         </dependency>
 
         <dependency>
@@ -38,12 +41,19 @@
         <dependency>
             <groupId>org.joda</groupId>
             <artifactId>joda-money</artifactId>
-            <version>1.0.1</version>
+            <version>${joda.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jadira.usertype</groupId>
             <artifactId>usertype.core</artifactId>
-            <version>6.0.1.GA</version>
+            <version>${jadira.usertype.version}</version>
+        </dependency>
+
+        <!--    用于HiKari显示SQL语句    -->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>${p6spy.version}</version>
         </dependency>
 
         <dependency>
@@ -69,11 +79,17 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+                <configuration>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>${maven.checkstyle.version}</version>
                 <configuration>
                     <configLocation>${basedir}/config/checkstyle/checkstyle.xml</configLocation>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
@@ -89,6 +105,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>8.22</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
         </plugins>

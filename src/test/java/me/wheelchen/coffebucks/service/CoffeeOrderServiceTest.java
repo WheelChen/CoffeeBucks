@@ -1,7 +1,9 @@
 package me.wheelchen.coffebucks.service;
 
+import lombok.extern.slf4j.Slf4j;
 import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.model.CoffeeOrder;
+import me.wheelchen.coffebucks.model.OrderState;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import static org.junit.Assert.*;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class CoffeeOrderServiceTest {
     @Autowired
     private CoffeeOrderService coffeeOrderService;
@@ -42,5 +45,19 @@ public class CoffeeOrderServiceTest {
             assertNotNull(coffeeOrder);
         });
 
+    }
+
+    @Test
+    public void updateState() {
+        Optional<Coffee> latte = coffeeService.findOneCoffee("Latte");
+        if (latte.isPresent()) {
+            CoffeeOrder order = coffeeOrderService.createOrder("Li Lei", latte.get());
+            log.info("Update INIT to PAID");
+            assertTrue(coffeeOrderService.updateState(order, OrderState.PAID));
+
+            log.info("Update PAID to INIT");
+            assertFalse(coffeeOrderService.updateState(order, OrderState.INIT));
+
+        }
     }
 }

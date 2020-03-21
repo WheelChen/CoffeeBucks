@@ -5,8 +5,8 @@ import me.wheelchen.coffebucks.converter.BytesToMoneyConverter;
 import me.wheelchen.coffebucks.converter.MoneyToBytesConverter;
 import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.convert.RedisCustomConversions;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ import java.util.Arrays;
  * @author Kelvin Chen
  * @date 2020-03-19 18:28:41
  */
-@Component
+@Configuration
 public class RedisCustomizeConfig {
 
     /**

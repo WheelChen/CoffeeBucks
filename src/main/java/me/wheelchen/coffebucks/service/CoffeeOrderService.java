@@ -47,4 +47,21 @@ public class CoffeeOrderService {
         log.info("New Order: {}", saved);
         return saved;
     }
+
+    /**
+     * 更新状态
+     * @param order 订单信息
+     * @param state 订单状态
+     * @return 更新是否成功
+     */
+    public boolean updateState(CoffeeOrder order, OrderState state) {
+        if (state.compareTo(order.getState()) <= 0) {
+            log.warn("Wrong State order: {}, {}", state, order.getState());
+            return false;
+        }
+        order.setState(state);
+        coffeeOrderRepository.save(order);
+        log.info("Updated Order: {}", order);
+        return true;
+    }
 }

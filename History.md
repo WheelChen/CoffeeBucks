@@ -1,32 +1,16 @@
 # Coffee Bucks 更新日志
-## 样例说明
-```markdown
-## 更新日期 - xxx
 
-【新增】/【删除】/【修改】
+## 更新日期 - 20200319
+- 创建Coffee/CoffeeOrder实体类，搭建基本框架
+- 引入CacheRepository,进行Redis缓存操作
+- 针对特定Money类型进行自定义Converter方便存入缓存
 
-- `common - annontation` - 目录下加入了`SysLog`注解
+## 更新日期 - 20200319 - 03
+- 引入travis 进行持续集成控制
+- 引入checkstyle加强代码规范
 
-------
-
-```
-### 更新日期 - 20200319 - 01
-
-【新增】
-- 初始化项目 创建Coffee/CoffeeOrder实体类
-
-### 更新日期 - 20200319 - 02
-
-【新增】
-> 引入CoffeeCache对象，将其放入Redis中。
-
-`model.CoffeeCache`
-`coffebucks.repository.CoffeeCacheRepository`
-
-> 自定义converter处理money类型
-
-`BytesToMoneyConverter`
-`MoneyToBytesConverter`
-
-OutPut:
-<img src="https://tva1.sinaimg.cn/large/00831rSTly1gczjfv5f5ej30di052t9a.jpg" style="zoom:50%;" />
+## 更新日期 - 20200321 - 01
+- 使用AOP实现DAO层的性能监控
+- 使用p6spy进行SQL日志的输出
+- 规范maven依赖版本管理
+- 分离h2 SQL文件
