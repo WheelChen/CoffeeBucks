@@ -3,6 +3,7 @@ package me.wheelchen.coffebucks.repository;
 import me.wheelchen.coffebucks.model.Coffee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -18,4 +19,12 @@ public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
      * @return 咖啡
      */
     Optional<Coffee> findOneByName(String name);
+
+    /**
+     * 根据咖啡名查找、按id排序
+     *
+     * @param names 咖啡名 list
+     * @return
+     */
+    List<Coffee> findByNameInOrderById(List<String> names);
 }

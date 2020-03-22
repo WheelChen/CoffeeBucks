@@ -28,10 +28,11 @@
 
         <module name="RedundantImport"/>
 
-        <module name="JavadocMethod">
-            <property name="allowMissingReturnTag" value="true"/>
-            <property name="scope" value="public" />
-        </module>
+<!--        <module name="JavadocMethod">-->
+<!--            <property name="allowMissingReturnTag" value="true"/>-->
+<!--            <property name="scope" value="public" />-->
+<!--        </module>-->
+
         <!--Checks that classes that override equals() also override hashCode()-->
         <module name="EqualsHashCode"/>
         <!--Checks for over-complicated boolean expressions. Currently finds code like if (topic == true), topic || true, !false, etc.-->

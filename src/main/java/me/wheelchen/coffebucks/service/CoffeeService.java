@@ -5,6 +5,8 @@ import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.model.CoffeeCache;
 import me.wheelchen.coffebucks.repository.CoffeeCacheRepository;
 import me.wheelchen.coffebucks.repository.CoffeeRepository;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,7 @@ import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatc
  */
 @Slf4j
 @Service
+@CacheConfig(cacheNames = "CoffeeCache")
 public class CoffeeService {
 
     private final CoffeeCacheRepository coffeeCacheRepository;
@@ -45,6 +48,7 @@ public class CoffeeService {
      *
      * @return
      */
+    @Cacheable
     public List<Coffee> findAllCoffee() {
         return coffeeRepository.findAll();
     }
@@ -112,6 +116,16 @@ public class CoffeeService {
         Optional<Coffee> coffee = coffeeRepository.findOne(coffeeExample);
         log.info("Coffee Found: {}", coffee);
         return coffee;
+    }
+
+    /**
+     * 根据咖啡名查找、按id排序
+     *
+     * @param names 咖啡名 list
+     * @return
+     */
+    public List<Coffee> getCoffeeByName(List<String> names) {
+        return coffeeRepository.findByNameInOrderById(names);
     }
 }
 

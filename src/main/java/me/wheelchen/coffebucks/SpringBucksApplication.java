@@ -1,13 +1,11 @@
 package me.wheelchen.coffebucks;
 
 import lombok.extern.slf4j.Slf4j;
-import me.wheelchen.coffebucks.service.CoffeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -21,11 +19,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableRedisRepositories
-@EnableAspectJAutoProxy
+@EnableCaching
+//@EnableAspectJAutoProxy
 public class SpringBucksApplication implements ApplicationRunner {
-
-    @Autowired
-    private CoffeeService coffeeService;
 
     /**
      * Spring启动方法
