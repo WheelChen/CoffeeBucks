@@ -1,4 +1,4 @@
-package me.wheelchen.coffebucks.converter;
+package me.wheelchen.coffebucks.common.converter;
 
 import org.joda.money.Money;
 import org.springframework.core.convert.converter.Converter;

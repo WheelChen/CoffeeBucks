@@ -27,4 +27,12 @@ public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
      * @return
      */
     List<Coffee> findByNameInOrderById(List<String> names);
+
+    /**
+     * 根据名字查找咖啡
+     *
+     * @param name 咖啡名称
+     * @return
+     */
+    Coffee findByName(String name);
 }

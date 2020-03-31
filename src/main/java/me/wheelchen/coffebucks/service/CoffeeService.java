@@ -5,6 +5,7 @@ import me.wheelchen.coffebucks.model.Coffee;
 import me.wheelchen.coffebucks.model.CoffeeCache;
 import me.wheelchen.coffebucks.repository.CoffeeCacheRepository;
 import me.wheelchen.coffebucks.repository.CoffeeRepository;
+import org.joda.money.Money;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Example;
@@ -126,6 +127,23 @@ public class CoffeeService {
      */
     public List<Coffee> getCoffeeByName(List<String> names) {
         return coffeeRepository.findByNameInOrderById(names);
+    }
+
+    /**
+     * 根据id查找咖啡
+     * @param id 咖啡id
+     * @return
+     */
+    public Coffee getCoffee(Long id) {
+        return coffeeRepository.getOne(id);
+    }
+
+    public Coffee getCoffee(String name) {
+        return coffeeRepository.findByName(name);
+    }
+
+    public Coffee saveCoffee(String name, Money price) {
+        return coffeeRepository.save(Coffee.builder().name(name).price(price).build());
     }
 }
 

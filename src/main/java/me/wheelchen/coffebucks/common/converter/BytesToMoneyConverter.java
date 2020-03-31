@@ -1,4 +1,4 @@
-package me.wheelchen.coffebucks.converter;
+package me.wheelchen.coffebucks.common.converter;
 
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;

@@ -1,8 +1,8 @@
 package me.wheelchen.coffebucks.config;
 
 import io.lettuce.core.ReadFrom;
-import me.wheelchen.coffebucks.converter.BytesToMoneyConverter;
-import me.wheelchen.coffebucks.converter.MoneyToBytesConverter;
+import me.wheelchen.coffebucks.common.converter.BytesToMoneyConverter;
+import me.wheelchen.coffebucks.common.converter.MoneyToBytesConverter;
 import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

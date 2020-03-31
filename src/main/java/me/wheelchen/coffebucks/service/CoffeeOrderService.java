@@ -64,4 +64,13 @@ public class CoffeeOrderService {
         log.info("Updated Order: {}", order);
         return true;
     }
+
+    /**
+     * 根据订单id获取订单
+     * @param id 订单id
+     * @return
+     */
+    public CoffeeOrder get(Long id) {
+        return coffeeOrderRepository.getOne(id);
+    }
 }
