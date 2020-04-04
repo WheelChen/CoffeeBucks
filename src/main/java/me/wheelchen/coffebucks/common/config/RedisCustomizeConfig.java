@@ -1,4 +1,4 @@
-package me.wheelchen.coffebucks.config;
+package me.wheelchen.coffebucks.common.config;
 
 import io.lettuce.core.ReadFrom;
 import me.wheelchen.coffebucks.common.converter.BytesToMoneyConverter;

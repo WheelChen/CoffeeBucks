@@ -72,7 +72,6 @@ public class CoffeeController {
         return coffee;
     }
 
-
     /**
      * 表单类型提交
      *
@@ -109,7 +108,6 @@ public class CoffeeController {
         }
         return coffeeService.saveCoffee(newCoffee.getName(), newCoffee.getPrice());
     }
-
 
     /**
      * 上传文件批量增加coffee

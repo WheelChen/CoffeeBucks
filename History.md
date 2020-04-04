@@ -9,7 +9,7 @@
 - 引入checkstyle加强代码规范
 
 ## 更新日期 - 20200321 - 01
-- 使用AOP实现DAO层的性能监控
+- 使用AOP实现DAO层的性能监控 - PerformanceAspect
 - 使用p6spy进行SQL日志的输出
 - 规范maven依赖版本管理
 - 分离h2 SQL文件
@@ -23,3 +23,6 @@
 
 ## 更新日期 - 20200402
 - 添加异常处理
+
+## 更新日期 - 20200403
+- 添加web层拦截器 - PerformanceInterceptor
