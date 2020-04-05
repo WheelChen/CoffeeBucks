@@ -82,16 +82,21 @@
         </dependency>
 
         <!-- 用于HiKari显示SQL语句 -->
-        <dependency>
-            <groupId>p6spy</groupId>
-            <artifactId>p6spy</artifactId>
-            <version>${p6spy.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>p6spy</groupId>-->
+<!--            <artifactId>p6spy</artifactId>-->
+<!--            <version>${p6spy.version}</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.h2database</groupId>-->
+<!--            <artifactId>h2</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
 
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
         <dependency>
