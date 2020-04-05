@@ -1,5 +1,8 @@
 language: java
 jdk:
   - openjdk8
+services:
+  - mysql
 before_script:
   - sudo redis-server /etc/redis/redis.conf --port 6300
+  - mysql -r root --password==123456
