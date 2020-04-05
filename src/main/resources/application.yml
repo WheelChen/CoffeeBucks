@@ -6,7 +6,7 @@ spring:
 
     # 切换为mysql
     username: root
-    password: 123456
+    password:
     url: jdbc:mysql://localhost/coffeebucks?useSSL=false
   jpa:
     hibernate:

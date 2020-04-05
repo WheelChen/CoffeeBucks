@@ -18,3 +18,4 @@
 
 
 ## TODO LIST
+- [ ] travis集成docker

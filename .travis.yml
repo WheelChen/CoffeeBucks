@@ -5,4 +5,4 @@ services:
   - mysql
 before_script:
   - sudo redis-server /etc/redis/redis.conf --port 6300
-  - mysql -u root --password==123456
+  - sudo mysql -e 'CREATE DATABASE coffeebucks;'
