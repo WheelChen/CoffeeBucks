@@ -18,4 +18,5 @@
 
 
 ## TODO LIST
+- [x] Redis缓存商品信息
 - [ ] travis集成docker

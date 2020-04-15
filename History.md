@@ -8,7 +8,7 @@
 - 引入travis 进行持续集成控制
 - 引入checkstyle加强代码规范
 
-## 更新日期 - 20200321 - 01
+## 更新日期 - 20200321
 - 使用AOP实现DAO层的性能监控 - PerformanceAspect
 - 使用p6spy进行SQL日志的输出
 - 规范maven依赖版本管理
@@ -26,3 +26,7 @@
 
 ## 更新日期 - 20200403
 - 添加web层拦截器 - PerformanceInterceptor
+
+## 更新日期 - 20200415
+- restructure 项目结构,改为多module结构
+- 

@@ -1,0 +1,26 @@
+drop table if exists t_coffee;
+drop table if exists t_order ;
+drop table if exists t_order_coffee ;
+
+create table t_coffee (
+    id bigint auto_increment,
+    create_time timestamp DEFAULT CURRENT_TIMESTAMP,
+    update_time timestamp DEFAULT CURRENT_TIMESTAMP,
+    name varchar(255),
+    price bigint,
+    primary key (id)
+);
+
+create table t_order (
+    id bigint auto_increment,
+    create_time timestamp DEFAULT CURRENT_TIMESTAMP,
+    update_time timestamp DEFAULT CURRENT_TIMESTAMP,
+    customer varchar(255),
+    state integer not null,
+    primary key (id)
+);
+
+create table t_order_coffee (
+    coffee_order_id bigint not null,
+    items_id bigint not null
+);
