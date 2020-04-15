@@ -7,7 +7,7 @@ spring:
     # 切换为mysql
     platform: MYSQL
     username: root
-    password: 123456
+    password:
     url: jdbc:mysql://localhost/coffeebucks?useSSL=false
     schema: classpath:schema.sql
     data: classpath:data.sql
