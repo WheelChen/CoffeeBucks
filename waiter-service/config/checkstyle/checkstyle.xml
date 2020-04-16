@@ -56,7 +56,7 @@
         <!--Validates identifiers for local, final variables, including catch parameters-->
         <module name="LocalFinalVariableName"/>
         <!--Validates identifiers for non-static fields-->
-        <module name="MemberName"/>
+<!--        <module name="MemberName"/>-->
         <!--Validates identifiers for class type parameters-->
         <module name="ClassTypeParameterName">
             <property name="format" value="(^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$)"/>
