@@ -21,6 +21,7 @@
     <properties>
         <java.version>1.8</java.version>
         <maven.checkstyle.version>3.0.0</maven.checkstyle.version>
+        <joda.version>1.0.1</joda.version>
     </properties>
 
     <dependencies>
@@ -39,6 +40,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-money</artifactId>
+            <version>${joda.version}</version>
         </dependency>
     </dependencies>
     <build>

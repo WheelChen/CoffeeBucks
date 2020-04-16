@@ -32,3 +32,4 @@
 
 ## 更新日期 - 20200416
 - 使用RestTemplate进行Http简单请求
+- 增加对Money的序列化/反序列化处理、使用ParameterizedTypeReference处理泛型对象的接收
