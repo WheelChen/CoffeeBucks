@@ -29,4 +29,6 @@
 
 ## 更新日期 - 20200415
 - restructure 项目结构,改为多module结构
-- 
+
+## 更新日期 - 20200416
+- 使用RestTemplate进行Http简单请求
