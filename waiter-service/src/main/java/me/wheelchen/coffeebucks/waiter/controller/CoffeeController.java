@@ -59,18 +59,18 @@ public class CoffeeController {
         return coffeeService.getCoffee(name);
     }
 
-    /**
-     * 根据id查找咖啡
-     * 使用`@PathVariable`那取URI中信息
-     * @param id 咖啡id
-     * @return
-     */
-    @GetMapping(path = "/{id}")
-    public Coffee getById(@PathVariable Long id) {
-        Coffee coffee = coffeeService.getCoffee(id);
-        log.info("Coffee {}:", coffee);
-        return coffee;
-    }
+//    /**
+//     * 根据id查找咖啡
+//     * 使用`@PathVariable`那取URI中信息
+//     * @param id 咖啡id
+//     * @return
+//     */
+//    @GetMapping(path = "/{id}")
+//    public Coffee getById(@PathVariable("id") Long id) {
+//        Coffee coffee = coffeeService.getCoffee(id);
+//        log.info("Coffee {}:", coffee);
+//        return coffee;
+//    }
 
     /**
      * 表单类型提交

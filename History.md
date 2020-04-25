@@ -34,3 +34,14 @@
 - 使用RestTemplate进行Http简单请求
 - 增加对Money的序列化/反序列化处理、使用ParameterizedTypeReference处理泛型对象的接收
 - 增加http连接相关配置
+
+## 更新日期 - 20200419
+- 使用spring-data-rest实践HATEOAS,可以实现带分页的请求。例如：
+```text
+http://127.0.0.1:8080/coffee?page=0&size=3&sort=id,desc
+
+http://localhost:8080/coffee/search
+```
+
+## 更新日期 - 20200425
+- 实践超媒体服务

@@ -45,13 +45,13 @@ public class PerformanceInterceptor implements HandlerInterceptor {
             String methodName = handlerMethod.getMethod().getName();
             method = beanType + "." + methodName;
         }
-        log.info("{};{};{};{};{}ms;{}ms;{}ms", request.getRequestURI(), method,
+        log.info("{};{};{};{};总时间:{}ms;处理所花时间:{}ms;postHandler:{}ms", request.getRequestURI(), method,
                 response.getStatus(), ex == null ? "-" : ex.getClass().getSimpleName(),
                 sw.getTotalTimeMillis(), sw.getTotalTimeMillis() - sw.getLastTaskTimeMillis(),
                 sw.getLastTaskTimeMillis());
 
 
-        // 注意使用threadLocal记得及时回收
+        // 注意使用threadLocal变量记得及时回收
         stopWatch.remove();
     }
 }

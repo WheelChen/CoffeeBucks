@@ -5,7 +5,6 @@ import me.wheelchen.coffeebucks.customer.model.Coffee;
 import org.joda.money.CurrencyUnit;
 import org.joda.money.Money;
 import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -19,12 +18,15 @@ import java.net.URI;
 import java.util.List;
 
 /**
+ * 暂时隐去 ApplicationRunner
+ * 使用restTemplate发起网络请求
+ *
  * @author Kelvin Chen
  * @date 2020-04-16 21:03:15
  */
 @Slf4j
 @Component
-public class CustomRunner implements ApplicationRunner {
+public class CustomRunner {
     private final RestTemplate restTemplate;
 
     public CustomRunner(RestTemplate restTemplate) {
@@ -32,7 +34,6 @@ public class CustomRunner implements ApplicationRunner {
     }
 
 
-    @Override
     public void run(ApplicationArguments args) throws Exception {
         // Request - 1
         String baseUri = "http://localhost:8080/";

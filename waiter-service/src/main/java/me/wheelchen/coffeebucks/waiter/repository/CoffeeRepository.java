@@ -2,6 +2,7 @@ package me.wheelchen.coffeebucks.waiter.repository;
 
 import me.wheelchen.coffeebucks.waiter.model.Coffee;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import java.util.Optional;
  * @author Kelvin Chen
  * @date 2020-03-19 10:59:14
  */
+@RepositoryRestResource(path = "/coffee")
 public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
     /**
      * 按咖啡名查找
