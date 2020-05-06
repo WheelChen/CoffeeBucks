@@ -45,3 +45,6 @@ http://localhost:8080/coffee/search
 
 ## 更新日期 - 20200425
 - 实践超媒体服务
+
+## 更新日期 - 20200506
+- 引入Actuator，为监控咖啡数量添加health indicator.

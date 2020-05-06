@@ -20,4 +20,5 @@
 ## TODO LIST
 - [x] Redis缓存商品信息
 - [ ] travis集成docker
-- [ ] ORM使用Mybatis
+- [ ] ORM切换为Mybatis
+- [ ] 添加Actuator对应用程序进行监控、管理

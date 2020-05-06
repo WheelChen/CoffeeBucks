@@ -14,7 +14,7 @@ spring:
     initializationMode: always
   jpa:
     hibernate:
-      # 启动应用create表, 关闭应用drop表
+      # 不启用hibernate ddl-auto
       ddl-auto: none
     properties:
       hibernate:
@@ -23,3 +23,18 @@ spring:
   redis:
     host: localhost
     port: 6300
+management:
+  health:
+    defaults:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+info:
+  app:
+    author: Kelvin Chen
+    encoding: @project.build.sourceEncoding@

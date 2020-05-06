@@ -145,5 +145,9 @@ public class CoffeeService {
     public Coffee saveCoffee(String name, Money price) {
         return coffeeRepository.save(Coffee.builder().name(name).price(price).build());
     }
+
+    public long getCoffeeCount() {
+        return coffeeRepository.count();
+    }
 }
 
